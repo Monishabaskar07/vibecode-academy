@@ -42,8 +42,7 @@ function App() {
   const [benchRunning, setBenchRunning] = useState(false);
 
   // --- API Base URL ---
-  const API_BASE = 'http://127.0.0.1:8000/api';
-
+  const API_BASE = 'https://vibecode-academy.onrender.com/api';
   // --- Fetch Initial Data ---
   useEffect(() => {
     fetchVaultStatus();
