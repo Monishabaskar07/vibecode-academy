@@ -36,45 +36,51 @@ VibeCode Academy combines a modern React frontend with a FastAPI backend and a *
 
 # 🏗 System Architecture
 
-```
-                         USER
-                           │
-                           ▼
-        +----------------------------------+
-        |     Frontend (React + Vite)      |
-        |      VibeCode Academy UI         |
-        +----------------------------------+
-                           │
-                           ▼
-        +----------------------------------+
-        |      Backend (FastAPI API)       |
-        +----------------------------------+
-               │                     │
-               │                     ▼
-               │          +----------------------+
-               │          | JSON Database        |
-               │          | sessions.json        |
-               │          | vault.json           |
-               │          | benchmarks.json      |
-               │          | challenges.json      |
-               │          +----------------------+
+┌──────────────────────────────┐
+│         USER PROMPT          │
+└──────────────┬───────────────┘
                │
-               ▼
-        +----------------------------------------------+
-        |      Google ADK - 5 Agent Pipeline           |
-        +----------------------------------------------+
-                           │
-                           ▼
-    +-----------+ → +-----------+ → +-----------+ → +-----------+ → +-----------+
-    | Planner   |   | Research  |   | Code      |   | Review    |   | Refine    |
-    | Agent     |   | Agent     |   | Agent     |   | Agent     |   | Agent     |
-    +-----------+   +-----------+   +-----------+   +-----------+   +-----------+
-           │               │               │               │               │
-           └───────────────┴───────────────┴───────────────┴───────────────┘
-                                   │
-                                   ▼
-                      Final Response Returned to User
-```
+               v
+┌──────────────────────────────┐
+│ 1. SECURITY GUARD            │
+│    - Sanitizes prompt        │
+│    - Removes unsafe content  │
+└──────────────┬───────────────┘
+               │
+               v
+┌──────────────────────────────┐
+│ 2. LEARNING COORDINATOR      │
+│    - Guides session flow     │
+│    - Structures learning     │
+└──────────────┬───────────────┘
+               │
+               v
+┌──────────────────────────────┐
+│ 3. ARCHITECT                 │
+│    - Calculates node coords  │
+│    - Traces execution paths  │
+└──────────────┬───────────────┘
+               │
+               v
+┌──────────────────────────────┐
+│ 4. CHAOS AGENT               │
+│    - Injects adaptive bugs   │
+│    - Generates quizzes       │
+└──────────────┬───────────────┘
+               │
+               v
+┌──────────────────────────────┐
+│ 5. COMPLEXITY ANALYST        │
+│    - Queries MCP server      │
+│    - Benchmarks execution    │
+└──────────────┬───────────────┘
+               │
+               v
+┌──────────────────────────────┐
+│        FINAL OUTPUT          │
+└──────────────────────────────┘
+                         
+      
 
 ---
 
@@ -133,10 +139,10 @@ Hosted on **Render Web Service**
 # 📸 Demo
 
 Live Demo:
-> https://YOUR-FRONTEND-URL.onrender.com
+> https://vibecode-academy-frontend.onrender.com
 
 Backend API:
-> https://YOUR-BACKEND-URL.onrender.com/docs
+> https://your-backend-url.onrender.com/docs
 
 GitHub Repository:
 > https://github.com/Monishabaskar07/vibecode-academy
